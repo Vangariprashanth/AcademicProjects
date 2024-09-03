@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="iFINANCEAnalysisModelStoreContainer" CdmEntityContainer="iFINANCEModel">
+    <EntitySetMapping Name="AccountCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.AccountCategory)">
+        <MappingFragment StoreEntitySet="AccountCategories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.Administrator)">
+        <MappingFragment StoreEntitySet="Administrators">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dateHired" ColumnName="dateHired" />
+          <ScalarProperty Name="dateFinished" ColumnName="dateFinished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.Group)">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterAccounts">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.MasterAccount)">
+        <MappingFragment StoreEntitySet="MasterAccounts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="openingAmount" ColumnName="openingAmount" />
+          <ScalarProperty Name="closingAmount" ColumnName="closingAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonAdminUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.NonAdminUser)">
+        <MappingFragment StoreEntitySet="NonAdminUsers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionLines">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.TransactionLine)">
+        <MappingFragment StoreEntitySet="TransactionLines">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="creditedAmount" ColumnName="creditedAmount" />
+          <ScalarProperty Name="debitedAmount" ColumnName="debitedAmount" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.Transaction)">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPasswords">
+      <EntityTypeMapping TypeName="IsTypeOf(iFINANCEAnalysisModel.UserPassword)">
+        <MappingFragment StoreEntitySet="UserPasswords">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="encryptedPassword" ColumnName="encryptedPassword" />
+          <ScalarProperty Name="passwordExpiryTime" ColumnName="passwordExpiryTime" />
+          <ScalarProperty Name="userAccountExpiryDate" ColumnName="userAccountExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AccountCategoryGroup" TypeName="iFINANCEAnalysisModel.AccountCategoryGroup" StoreEntitySet="Groups">
+      <EndProperty Name="AccountCategory">
+        <ScalarProperty Name="ID" ColumnName="AccountCategory_ID" />
+      </EndProperty>
+      <EndProperty Name="Group">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GroupMasterAccount" TypeName="iFINANCEAnalysisModel.GroupMasterAccount" StoreEntitySet="MasterAccounts">
+      <EndProperty Name="Group">
+        <ScalarProperty Name="ID" ColumnName="Group_ID" />
+      </EndProperty>
+      <EndProperty Name="MasterAccount">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TransactionLineMasterAccount" TypeName="iFINANCEAnalysisModel.TransactionLineMasterAccount" StoreEntitySet="TransactionLines">
+      <EndProperty Name="MasterAccount">
+        <ScalarProperty Name="ID" ColumnName="MasterAccounts_ID" />
+      </EndProperty>
+      <EndProperty Name="TransactionLine">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TransactionLineMasterAccount1" TypeName="iFINANCEAnalysisModel.TransactionLineMasterAccount1" StoreEntitySet="TransactionLines">
+      <EndProperty Name="MasterAccount">
+        <ScalarProperty Name="ID" ColumnName="MasterAccounts1_ID" />
+      </EndProperty>
+      <EndProperty Name="TransactionLine">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GroupGroup" TypeName="iFINANCEAnalysisModel.GroupGroup" StoreEntitySet="Groups">
+      <EndProperty Name="Group">
+        <ScalarProperty Name="ID" ColumnName="parent_ID" />
+      </EndProperty>
+      <EndProperty Name="Group1">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TransactionTransactionLine" TypeName="iFINANCEAnalysisModel.TransactionTransactionLine" StoreEntitySet="TransactionLines">
+      <EndProperty Name="Transaction">
+        <ScalarProperty Name="ID" ColumnName="Transaction_ID" />
+      </EndProperty>
+      <EndProperty Name="TransactionLine">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="NonAdminUserTransaction" TypeName="iFINANCEAnalysisModel.NonAdminUserTransaction" StoreEntitySet="Transactions">
+      <EndProperty Name="NonAdminUser">
+        <ScalarProperty Name="ID" ColumnName="NonAdminUser_ID" />
+      </EndProperty>
+      <EndProperty Name="Transaction">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="NonAdminUserUserPassword" TypeName="iFINANCEAnalysisModel.NonAdminUserUserPassword" StoreEntitySet="NonAdminUsers">
+      <EndProperty Name="UserPassword">
+        <ScalarProperty Name="ID" ColumnName="UserPassword_ID" />
+      </EndProperty>
+      <EndProperty Name="NonAdminUser">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdministratorUserPassword" TypeName="iFINANCEAnalysisModel.AdministratorUserPassword" StoreEntitySet="Administrators">
+      <EndProperty Name="UserPassword">
+        <ScalarProperty Name="ID" ColumnName="UserPassword_ID" />
+      </EndProperty>
+      <EndProperty Name="Administrator">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdministratorNonAdminUser" TypeName="iFINANCEAnalysisModel.AdministratorNonAdminUser" StoreEntitySet="NonAdminUsers">
+      <EndProperty Name="Administrator">
+        <ScalarProperty Name="ID" ColumnName="Administrator_ID" />
+      </EndProperty>
+      <EndProperty Name="NonAdminUser">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

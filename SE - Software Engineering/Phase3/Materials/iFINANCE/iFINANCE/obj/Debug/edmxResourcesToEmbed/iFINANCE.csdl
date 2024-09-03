@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iFINANCEAnalysisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AccountCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateHired" Type="DateTime" Precision="3" Nullable="true" />
+    <Property Name="dateFinished" Type="DateTime" Precision="3" Nullable="true" />
+    <NavigationProperty Name="UserPassword" Relationship="iFINANCEAnalysisModel.AdministratorUserPassword" FromRole="Administrator" ToRole="UserPassword" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AccountCategory" Relationship="iFINANCEAnalysisModel.AccountCategoryGroup" FromRole="Group" ToRole="AccountCategory" />
+    <NavigationProperty Name="parent" Relationship="iFINANCEAnalysisModel.GroupGroup" FromRole="Group1" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="MasterAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="openingAmount" Type="Double" Nullable="true" />
+    <Property Name="closingAmount" Type="Double" Nullable="true" />
+    <NavigationProperty Name="Group" Relationship="iFINANCEAnalysisModel.GroupMasterAccount" FromRole="MasterAccount" ToRole="Group" />
+  </EntityType>
+  <EntityType Name="NonAdminUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+    <NavigationProperty Name="UserPassword" Relationship="iFINANCEAnalysisModel.NonAdminUserUserPassword" FromRole="NonAdminUser" ToRole="UserPassword" />
+    <NavigationProperty Name="Administrator" Relationship="iFINANCEAnalysisModel.AdministratorNonAdminUser" FromRole="NonAdminUser" ToRole="Administrator" />
+  </EntityType>
+  <EntityType Name="TransactionLine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="creditedAmount" Type="Double" Nullable="false" />
+    <Property Name="debitedAmount" Type="Double" Nullable="false" />
+    <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+    <NavigationProperty Name="MasterAccounts" Relationship="iFINANCEAnalysisModel.TransactionLineMasterAccount" FromRole="TransactionLine" ToRole="MasterAccount" />
+    <NavigationProperty Name="MasterAccounts1" Relationship="iFINANCEAnalysisModel.TransactionLineMasterAccount1" FromRole="TransactionLine" ToRole="MasterAccount" />
+    <NavigationProperty Name="Transaction" Relationship="iFINANCEAnalysisModel.TransactionTransactionLine" FromRole="TransactionLine" ToRole="Transaction" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+    <NavigationProperty Name="NonAdminUser" Relationship="iFINANCEAnalysisModel.NonAdminUserTransaction" FromRole="Transaction" ToRole="NonAdminUser" />
+  </EntityType>
+  <EntityType Name="UserPassword">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="encryptedPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="passwordExpiryTime" Type="Int32" Nullable="true" />
+    <Property Name="userAccountExpiryDate" Type="DateTime" Precision="3" Nullable="true" />
+  </EntityType>
+  <EntityContainer Name="iFINANCEModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountCategories" EntityType="Self.AccountCategory" />
+    <EntitySet Name="Administrators" EntityType="Self.Administrator" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="MasterAccounts" EntityType="Self.MasterAccount" />
+    <EntitySet Name="NonAdminUsers" EntityType="Self.NonAdminUser" />
+    <EntitySet Name="TransactionLines" EntityType="Self.TransactionLine" />
+    <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+    <EntitySet Name="UserPasswords" EntityType="Self.UserPassword" />
+    <AssociationSet Name="AccountCategoryGroup" Association="iFINANCEAnalysisModel.AccountCategoryGroup">
+      <End Role="AccountCategory" EntitySet="AccountCategories" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="GroupMasterAccount" Association="iFINANCEAnalysisModel.GroupMasterAccount">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="MasterAccount" EntitySet="MasterAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="TransactionLineMasterAccount" Association="iFINANCEAnalysisModel.TransactionLineMasterAccount">
+      <End Role="TransactionLine" EntitySet="TransactionLines" />
+      <End Role="MasterAccount" EntitySet="MasterAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="TransactionLineMasterAccount1" Association="iFINANCEAnalysisModel.TransactionLineMasterAccount1">
+      <End Role="TransactionLine" EntitySet="TransactionLines" />
+      <End Role="MasterAccount" EntitySet="MasterAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="GroupGroup" Association="iFINANCEAnalysisModel.GroupGroup">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="Group1" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="TransactionTransactionLine" Association="iFINANCEAnalysisModel.TransactionTransactionLine">
+      <End Role="Transaction" EntitySet="Transactions" />
+      <End Role="TransactionLine" EntitySet="TransactionLines" />
+    </AssociationSet>
+    <AssociationSet Name="NonAdminUserTransaction" Association="iFINANCEAnalysisModel.NonAdminUserTransaction">
+      <End Role="NonAdminUser" EntitySet="NonAdminUsers" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="NonAdminUserUserPassword" Association="iFINANCEAnalysisModel.NonAdminUserUserPassword">
+      <End Role="NonAdminUser" EntitySet="NonAdminUsers" />
+      <End Role="UserPassword" EntitySet="UserPasswords" />
+    </AssociationSet>
+    <AssociationSet Name="AdministratorUserPassword" Association="iFINANCEAnalysisModel.AdministratorUserPassword">
+      <End Role="Administrator" EntitySet="Administrators" />
+      <End Role="UserPassword" EntitySet="UserPasswords" />
+    </AssociationSet>
+    <AssociationSet Name="AdministratorNonAdminUser" Association="iFINANCEAnalysisModel.AdministratorNonAdminUser">
+      <End Role="Administrator" EntitySet="Administrators" />
+      <End Role="NonAdminUser" EntitySet="NonAdminUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="AccountCategoryGroup">
+    <End Type="iFINANCEAnalysisModel.AccountCategory" Role="AccountCategory" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.Group" Role="Group" Multiplicity="*" />
+  </Association>
+  <Association Name="GroupMasterAccount">
+    <End Type="iFINANCEAnalysisModel.Group" Role="Group" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.MasterAccount" Role="MasterAccount" Multiplicity="*" />
+  </Association>
+  <Association Name="TransactionLineMasterAccount">
+    <End Type="iFINANCEAnalysisModel.TransactionLine" Role="TransactionLine" Multiplicity="*" />
+    <End Type="iFINANCEAnalysisModel.MasterAccount" Role="MasterAccount" Multiplicity="1" />
+  </Association>
+  <Association Name="TransactionLineMasterAccount1">
+    <End Type="iFINANCEAnalysisModel.TransactionLine" Role="TransactionLine" Multiplicity="*" />
+    <End Type="iFINANCEAnalysisModel.MasterAccount" Role="MasterAccount" Multiplicity="1" />
+  </Association>
+  <Association Name="GroupGroup">
+    <End Type="iFINANCEAnalysisModel.Group" Role="Group" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.Group" Role="Group1" Multiplicity="*" />
+  </Association>
+  <Association Name="TransactionTransactionLine">
+    <End Type="iFINANCEAnalysisModel.Transaction" Role="Transaction" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.TransactionLine" Role="TransactionLine" Multiplicity="*" />
+  </Association>
+  <Association Name="NonAdminUserTransaction">
+    <End Type="iFINANCEAnalysisModel.NonAdminUser" Role="NonAdminUser" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.Transaction" Role="Transaction" Multiplicity="*" />
+  </Association>
+  <Association Name="NonAdminUserUserPassword">
+    <End Type="iFINANCEAnalysisModel.NonAdminUser" Role="NonAdminUser" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.UserPassword" Role="UserPassword" Multiplicity="1" />
+  </Association>
+  <Association Name="AdministratorUserPassword">
+    <End Type="iFINANCEAnalysisModel.Administrator" Role="Administrator" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.UserPassword" Role="UserPassword" Multiplicity="1" />
+  </Association>
+  <Association Name="AdministratorNonAdminUser">
+    <End Type="iFINANCEAnalysisModel.Administrator" Role="Administrator" Multiplicity="1" />
+    <End Type="iFINANCEAnalysisModel.NonAdminUser" Role="NonAdminUser" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,38 @@
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\bin\Debug\iFINANCE.exe.config
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\bin\Debug\iFINANCE.exe
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\bin\Debug\iFINANCE.pdb
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\bin\Debug\EntityFramework.dll
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\bin\Debug\EntityFramework.SqlServer.dll
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\bin\Debug\EntityFramework.xml
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\bin\Debug\EntityFramework.SqlServer.xml
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.about.resources
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.acAccountNameBox.resources
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.AccountsGroupsForm.resources
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.ChartOfAccountsForm.resources
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.MainForm.resources
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.Properties.Resources.resources
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.GenerateResource.cache
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.CoreCompileInputs.cache
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.CopyComplete
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.exe
+C:\UNT\5430 Software Engineering Spring 2023\Projects\Project1\Phase3\Solution\iFINANCE\iFINANCE\obj\Debug\iFINANCE.pdb
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\bin\Debug\iFINANCE.exe.config
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\bin\Debug\iFINANCE.exe
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\bin\Debug\iFINANCE.pdb
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\bin\Debug\EntityFramework.dll
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\bin\Debug\EntityFramework.xml
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.AssemblyReference.cache
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.SuggestedBindingRedirects.cache
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.about.resources
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.acAccountNameBox.resources
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.AccountsGroupsForm.resources
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.ChartOfAccountsForm.resources
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.MainForm.resources
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.Properties.Resources.resources
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.GenerateResource.cache
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.CoreCompileInputs.cache
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.csproj.CopyComplete
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.exe
+C:\Users\vangari prashanth\OneDrive\UNT\SE\Phase3\Materials\iFINANCE\iFINANCE\obj\Debug\iFINANCE.pdb
